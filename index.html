@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="board-wrap">
+        <div id="board" class="board" aria-label="Chessboard"></div>
+      </section>
+      <section class="panel">
+        <h1>Chess</h1>
+        <p class="subtitle">Local play or versus the computer. Full rules, including castling, en passant, and promotion.</p>
+        <div id="status" class="status">White to move</div>
+        <div class="modes">
+          <label>
+            Mode
+            <select id="mode">
+              <option value="human">Two players</option>
+              <option value="white">You play White</option>
+              <option value="black">You play Black</option>
+            </select>
+          </label>
+          <label>
+            Computer
+            <select id="depth">
+              <option value="2">Easy</option>
+              <option value="3" selected>Normal</option>
+              <option value="4">Hard</option>
+            </select>
+          </label>
+        </div>
+        <div class="controls">
+          <button id="new" class="primary">New game</button>
+          <button id="undo">Undo</button>
+          <button id="flip">Flip board</button>
+        </div>
+        <div class="captured">
+          <div id="captured-black"></div>
+          <div id="captured-white"></div>
+        </div>
+        <div class="history" id="history"></div>
+      </section>
+    </main>
+    <div id="promo" class="promo" role="dialog" aria-label="Choose promotion">
+      <div class="promo-box" id="promo-box"></div>
+    </div>
+    <script src="chess.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
